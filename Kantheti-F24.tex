@@ -1,0 +1,50 @@
+\subsection{Raja Kantheti}
+I am a master's student in Computer Science at UCCS. I want to choose the thesis path to satisfy the degree requirements. My expected course outcomes are to learn what it means to conduct research, how to write scientific papers, better articulate my ideas and evaluate their novelty, and write at least one paper of any type by the end of the semester.
+
+I want to do my thesis on processor pipeline design, which would optimize branch prediction using additional prefetching and decoding units in parallel with the central decode unit. This pipeline could also mitigate SPECTRE attacks, which exploit Speculative execution. 
+
+I am determined to evaluate my thesis proposal, understand the necessary steps to evaluate the outcomes of my thesis, and grasp the elements of a successful proposal. I am also excited to challenge myself, to see if I have the stamina for long-term research and if this path is the right one for my career progression.
+
+Some personal things about me outside of academia are that I like to be in solitude from time to time, lost in my thoughts and devices, contemplating meta-ethics, talking and debating with myself, and exploring all possibilities. The routines that would allow me to do this are my hobbies: Long walks and longer drives, camping alone, hiking in state/national parks and, wood carving. 
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.25\linewidth]{images/IMG_1667.JPG}
+\caption{'tis I. }
+\end{figure}
+
+\section*{Output of the gem5 simulator: Running a test program: }
+gem5 is a cycle accurate simulator widely used in Computer Architecture Research. 
+It is used to simulate the behavior of a computer system. 
+The output of the gem5 simulator is a trace of the instructions executed by the processor. 
+The trace is a list of instructions executed by the processor, along with the cycle number at which the instruction was executed.
+The trace can be used to analyze the performance of the processor, and to identify bottlenecks in the processor design.
+
+The simulation will produce a file with numerous metrics below are some of the metrics used by me for the survey paper.\\
+This is a simulation for risc-v ISA on a MINOR CPU for a  likedlist program. 
+
+simSeconds      0.001541 \# Number of seconds simulated (Second)\\
+simTicks      1540878200 \# Number of ticks simulated (Tick)\\
+finalTick     1540878200 \# Number of ticks from beginning of \\simulation (restored from checkpoints and never reset) (Tick)\\
+simFreq     1000000000000 \# The number of ticks per simulated second ((Tick/Second))\\
+hostSeconds         0.22 \# Real time elapsed on the host (Second)\\
+hostTickRate  6962621095 \# The number of ticks simulated per host second (ticks/s) ((Tick/Second))\\
+hostMemory       1158876 \# Number of bytes of host memory used (Byte)\\
+simInsts          113770 \# Number of instructions simulated (Count)\\
+simOps            113776 \# Number of ops (including micro ops) simulated (Count)\\
+hostInstRate      513943 \# Simulator instruction rate (inst/s) ((Count/Second))\\
+hostOpRate        513963 \# Simulator op (including micro ops) rate (op/s) ((Count/Second))\\
+board.processor.cores0.core.branchPred.lookups        29946 \# Number of BP lookups (Count)\\
+board.processor.cores0.core.branchPred.condPredicted  21139 \# Number of conditional branches predicted (Count)\\
+board.processor.cores0.core.branchPred.condIncorrect  462 \# Number of conditional branches incorrect (Count)\\
+board.processor.cores0.core.branchPred.BTBLookups     10899 \# Number of BTB lookups (Count)\\
+board.processor.cores0.core.branchPred.BTBUpdates     396 \# Number of BTB updates (Count)\\
+board.processor.cores0.core.branchPred.BTBHits        10187 \# Number of BTB hits (Count)\\
+board.processor.cores0.core.branchPred.BTBHitRatio    0.934673 \# BTB Hit Ratio (Ratio)\\
+board.processor.cores0.core.branchPred.RASUsed         2019 \# Number of times the RAS was used to get a target. (Count)\\
+board.processor.cores0.core.branchPred.RASIncorrect     5 \# Number of incorrect RAS predictions. (Count)\\
+board.processor.cores0.core.branchPred.indirectLookups  1790 \# Number of indirect predictor lookups. (Count)\\
+board.processor.cores0.core.branchPred.indirectHits     1748 \# Number of indirect target hits. (Count)\\
+board.processor.cores0.core.branchPred.indirectMisses    42 \# Number of indirect misses. (Count)\\
+board.processor.cores0.core.branchPred.indirectMispredicted  24 \# Number of mispredicted indirect branches. (Count)\\
+
+\section*{Questions For me: }
