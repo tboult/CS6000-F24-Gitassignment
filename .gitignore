@@ -8,3 +8,5 @@ Assignment3-git.pdf
 *.fdb_latexmk
 *.fls
 *.synctex.gz
+*.run.xml
+*.bcf
