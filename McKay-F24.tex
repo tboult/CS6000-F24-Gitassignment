@@ -19,14 +19,39 @@ I am a 2nd year PhD student at UCCS.  I haven't yet published a paper but I'm wo
 
 \section{Research Code Experience}
 \subsection{Repository Used}
-[Link to repository]
+I explored the Netflix-Skunkworks RiskQuant repository 
+(\url{https://github.com/Netflix-Skunkworks/riskquant}). While attempting to use 
+the full repository, I encountered compatibility issues with the required dependencies. 
+This led me to implement a simplified version of the risk quantification concepts 
+to demonstrate the core principles.
 
 \subsection{Testing Experience}
-[Document your experience]
+I created a basic risk quantification model that implements Monte Carlo simulation 
+to estimate potential losses from cyber incidents. The model takes into account:
+\begin{itemize}
+    \item Minimum and maximum potential losses (\$100,000 to \$1,000,000)
+    \item Annual probability of occurrence (10\%)
+    \item 10,000 simulation iterations for statistical significance
+\end{itemize}
+
+The simulation provides insights into potential cyber incident costs, including average 
+annual loss, maximum potential loss, and the 90th percentile loss value.
 
 \subsection{Output Examples}
-[Show some output]
+\begin{verbatim}
+Risk Analysis for Data Breach Scenario:
+Average Annual Loss: $52,624.65
+Maximum Potential Loss: $999,737.69
+90th Percentile Loss: $0.00
+\end{verbatim}
 
+\subsection{Analysis}
+The results show an average annual loss of about \$52,600, which aligns with the 
+10\% probability of an incident occurring. The maximum potential loss approaches 
+the upper limit of \$1,000,000, demonstrating the model's ability to capture 
+worst-case scenarios. The 90th percentile being \$0 indicates that in most 
+simulation runs (over 90\%), no loss occurred, which is consistent with the 
+low probability of occurrence.
 \section{Questions and Answers}
 % This section will be used later for Q&A
 
