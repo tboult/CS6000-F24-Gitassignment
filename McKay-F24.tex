@@ -1,5 +1,8 @@
 \documentclass{article}
 \usepackage{graphicx}
+\usepackage{url}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
 
 \begin{document}
 \title{Aaron McKay - Research and Background}
@@ -31,6 +34,15 @@ The simplified implementation used Python's built-in libraries:
     \item statistics: for statistical analysis
     \item Python classes: to organize the risk model structure
 \end{itemize}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{images/fair_model.png}
+    \caption{FAIR (Factor Analysis of Information Risk) Model presented at FAIR Conference 2023, Washington, DC. The FAIR model is a popular implementation of CRQ.
+    Credit: Jon Baker (Co-founder \& Director, Center for Threat-Informed Defense), 
+    Arvin Bansal (vCISO, Fortune500), and Vidit Baxi (Co-founder \& CISO, Safe Security)}
+    \label{fig:fair-model}
+\end{figure}
 
 \subsection{Testing Experience and Implementation Details}
 I created a SimpleRiskModel class that implements Monte Carlo simulation to estimate 
