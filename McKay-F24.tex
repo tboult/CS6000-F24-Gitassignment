@@ -18,24 +18,45 @@ I am a 2nd year PhD student at UCCS.  I haven't yet published a paper but I'm wo
 \end{figure}
 
 \section{Research Code Experience}
-\subsection{Repository Used}
+\subsection{Repository Used and Implementation Decisions}
 I explored the Netflix-Skunkworks RiskQuant repository 
 (\url{https://github.com/Netflix-Skunkworks/riskquant}). While attempting to use 
-the full repository, I encountered compatibility issues with the required dependencies. 
-This led me to implement a simplified version of the risk quantification concepts 
-to demonstrate the core principles.
+the full repository, I encountered compatibility issues with numpy<1.19.0,>=1.16.0 
+when trying to install with Python 3.12. Rather than downgrade Python, I decided to 
+implement a simplified version focusing on the core risk quantification concepts.
 
-\subsection{Testing Experience}
-I created a basic risk quantification model that implements Monte Carlo simulation 
-to estimate potential losses from cyber incidents. The model takes into account:
+The simplified implementation used Python's built-in libraries:
 \begin{itemize}
-    \item Minimum and maximum potential losses (\$100,000 to \$1,000,000)
-    \item Annual probability of occurrence (10\%)
-    \item 10,000 simulation iterations for statistical significance
+    \item random: for Monte Carlo simulation
+    \item statistics: for statistical analysis
+    \item Python classes: to organize the risk model structure
 \end{itemize}
 
-The simulation provides insights into potential cyber incident costs, including average 
-annual loss, maximum potential loss, and the 90th percentile loss value.
+\subsection{Testing Experience and Implementation Details}
+I created a SimpleRiskModel class that implements Monte Carlo simulation to estimate 
+potential losses from cyber incidents. The model was designed with these key components:
+\begin{itemize}
+    \item Class initialization with risk parameters (min loss, max loss, probability)
+    \item Simulation method running 10,000 iterations
+    \item Analysis method calculating key statistics
+    \item Output formatting for clear result presentation
+\end{itemize}
+
+The testing process involved:
+\begin{enumerate}
+    \item Setting up a data breach scenario with realistic parameters
+    \item Running multiple simulations to verify consistency
+    \item Analyzing the distribution of results
+    \item Validating that the average loss aligned with theoretical expectations
+\end{enumerate}
+
+Key model parameters were chosen based on typical cyber incident statistics:
+\begin{itemize}
+    \item Minimum loss: \$100,000 (typical small breach cost)
+    \item Maximum loss: \$1,000,000 (potential major incident)
+    \item Annual probability: 10\% (industry average for similar incidents)
+    \item Iterations: 10,000 (for statistical significance)
+\end{itemize}
 
 \subsection{Output Examples}
 \begin{verbatim}
