@@ -1,5 +1,5 @@
 \subsection{Raja Kantheti}
-I am a master's student in Computer Science at UCCS. I want to choose the thesis path to satisfy the degree requirements. My expected course outcomes are to learn what it means to conduct research, how to write scientific papers, better articulate my ideas and evaluate their novelty, and write at least one paper of any type by the end of the semester.
+I am a master's student in Computer Science at UCCS.\@ I want to choose the thesis path to satisfy the degree requirements.\@ My expected course outcomes are to learn what it means to conduct research, how to write scientific papers, better articulate my ideas and evaluate their novelty, and write at least one paper of any type by the end of the semester.
 
 I want to do my thesis on processor pipeline design, which would optimize branch prediction using additional prefetching and decoding units in parallel with the central decode unit. This pipeline could also mitigate SPECTRE attacks, which exploit Speculative execution. 
 
@@ -49,14 +49,15 @@ board.processor.cores0.core.branchPred.indirectMispredicted  24 \# Number of mis
 
 \section*{Questions For me: }
 Your work looks interesting from a computer architecture perspective. However, you have mentioned that it is based on risc-v architecture, in the current context, how is the scenario of this architecture being used in real world applications? What do you see the future prospects of it?
-<<<<<<< HEAD
-How do you think self reflection has helped you in designing your thesis? DC.
-=======
+
 $\longrightarrow$ RISC-V is an open-source instruction set architecture (ISA) based on reduced instruction set computing (RISC) principles. 
 It is designed to be simple, extensible, and easy to implement. RISC-V is gaining popularity in the industry, with companies like NVIDIA, Western Digital, and SiFive adopting it for their products. 
 The future prospects of RISC-V are bright, as it offers a flexible and customizable architecture that can be tailored to specific applications. 
 It is also supported by a vibrant open-source community that is driving innovation and development in the RISC-V ecosystem.
 
+How do you think self reflection has helped you in designing your thesis? DC.\@
+
+$\longrightarrow$ I focus mostly on where I go wrong in my research. I am always critical of my work as that is the only copinng mechanism that really worked for my serial procrastinating nature, over the years. I wouldn't really call this self reflection at all, since I honestly concentrate on what goes wrong soo much that I really do not appreciate what went right and worked. 
 \subsection{Questions from Aaron McKay}
 1. Given your interest in optimizing branch prediction and mitigating SPECTRE attacks, what insights did you gain from the gem5 simulation results showing 462 incorrect conditional branch predictions out of 21,139 predictions? How might this inform your thesis work?
 
@@ -71,5 +72,4 @@ Thanks for the question this has beeen interesting to think about.
 3. How do the additional prefetching and decoding units in your pipeline design improve branch prediction compared to traditional methods?
 
 $\longrightarrow$ Imgine a super scalar pipe line wiht all the functional units. The current problem is the overhead that a processor gets whenn there is branch misprediction. Processors also has speculative execution whcih makes them vulnnerabe to spectre attacks. 
-I got to thinking, what if the branch address that is required is already prefetched and decoded ready for the execution. Speculative executiion onnly happens when the instruction is in EX functional unit. So, if we can some how has the branch outcome address that is readdy to be executed with out squashing the entire pipeline, that would be a significant performance gain and the squashing is only performed on the ssecondary fetch and decode units. 
->>>>>>> f5f73c903e279eec7ebc866e4ec7f6f5712fb788
+I got to thinking, what if the branch address that is required is already prefetched and decoded ready for the execution. Speculative executiion onnly happens when the instruction is in EX functional unit. So, if we can some how has the branch outcome address that is readdy to be executed with out squashing the entire pipeline, that would be a significant performance gain and the squashing is only performed on the ssecondary fetch and decode units.
