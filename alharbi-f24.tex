@@ -50,3 +50,16 @@ For the assignment, I chose to use my own project from the CS6770 course instead
 \end{figure}
 
 In this implementation, I worked on hardware-software interaction, data transmission from the glove to the controller, and real-time visualization through the web interface. This approach allowed me to test the code using readily available equipment, focusing on translating the glove's readings into physical movements.
+
+\section{Questions}
+\subsection{Questions from Aaron McKay}
+\begin{enumerate}
+  \item In your glove sensor project, what challenges did you face in achieving accurate real-time calibration between the sensor readings and the robotic finger movements? I'm particularly interested in how you handled any latency issues in the data transmission chain.
+  \subsubsection*{Answer}
+  In my glove sensor project, I used a conductive sheet as a potentiometer, where bending the glove changes the sheet's resistance, producing numerical values that correspond to the finger's position. During the calibration phase, I recorded these values alongside the finger's position, and this data was mapped so the robotic finger motor could receive the correct angle based on the calibration. While there are slight errors and limitations during calibration, most of the effort ensures that the commands sent to the robotic finger are highly accurate. The data from the glove sensor is complex and requires deeper investigation to fully optimize the system.
+  \item Given your background in web development and your current focus on wearable computing, how do you envision integrating edge computing principles to enhance the response time and privacy aspects of wearable devices like your sensor glove?
+  
+  \subsubsection*{Answer}
+  With my background in web development and focus on wearable computing, I see edge computing as a way to improve response time and also help with privacy in the future. Right now, my main focus is getting accurate data from the glove sensor to control the finger movements. I have not spent much time on privacy yet, but I know it is important and something to look at later. Using edge computing can help process data directly on the glove or close to it, which reduces delays and makes the system faster. In the future, this could also help protect user privacy by keeping data local and not sending it to external servers.
+\end{enumerate}
+
