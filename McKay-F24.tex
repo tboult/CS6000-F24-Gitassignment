@@ -1,16 +1,18 @@
-\documentclass{article}
-\usepackage{graphicx}
-\usepackage{url}
-\usepackage[utf8]{inputenc}
-\usepackage[margin=1in]{geometry}
+% \documentclass{article}
+% \usepackage{graphicx}
+% \usepackage{url}
+% \usepackage[utf8]{inputenc}
+%\usepackage[margin=1in]{geometry}
 
-\begin{document}
-\title{Aaron McKay - Research and Background}
-\author{Aaron McKay}
-\maketitle
+% \begin{document}
+% \title{Aaron McKay - Research and Background}
+% \author{Aaron McKay}
+% \maketitle
+
+% Above lines are commented by Marwan Alharbi, since this is sub-latex file related to main one (Assignment3-git.tex) so no need to include latex header here
 
 % Your content from first assignment
-\section{About Me}
+\section{Aaron McKay}
 I am a 2nd year PhD student at UCCS.  I haven't yet published a paper but I'm working on it.  My area of research I think is one of the most challenging in all of cybersecurity, Cyber Risk Quantification (CRQ).  Its taken me some time to figure out how this problem is best approached and I think the answer lies in a deep classification and analysis of the interactions of Attackers and Defenders. There may be several derivations from this interaction, but since my attention is on cyber risk quantification, my focus is on "Susceptibility" of Systems and Users not only as a metric but as a factor to be used upstream the CRQ calculations.
 
 \begin{figure}[h]
@@ -117,5 +119,26 @@ real-world scenarios of collaboration challenges and their solutions.
 
 \section{Questions and Answers}
 % This section will be used later for Q&A
+\begin{enumerate}
+    \item How do you plan to improve your Monte Carlo simulation model to handle more complex cyber attacks or different types of attackers in the future?
+    
+    \subsection*{Answer}
+The current Monte Carlo simulation model provides a basic framework for risk quantification, 
+    but there are several planned improvements to handle complex attack scenarios:
+    
+    \begin{itemize}
+        \item Incorporate attacker profiles with different skill levels, resources, and motivations
+        \item Add multi-stage attack modeling to capture attack chains and dependencies
+        \item Include temporal factors to model how risks evolve over time
+        \item Integrate the FAIR model's components more explicitly, especially the 'Threat Event Frequency' 
+              and 'Vulnerability' factors shown in the diagram
+        \item Add correlation between different types of attacks to model complex scenarios
+        \item Implement Bayesian updating to refine probabilities based on observed incidents
+    \end{itemize}
+    
+    The goal is to move beyond simple probability-based scenarios to a more nuanced model that 
+    reflects the dynamic nature of cyber threats while maintaining computational efficiency.
+\end{enumerate}
 
-\end{document}
+
+% \end{document}
