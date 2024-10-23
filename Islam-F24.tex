@@ -124,9 +124,16 @@ Epoch 50/50
 Number of anomalies detected: 717
 
 \section*{Questions: }
-What activation functions and optimiser did you use?
+What activation functions and optimiser did you use? (From Sahil Thapa)
+Answer: For anomaly detection in fake base stations using autoencoders, the ReLU or Leaky ReLU activation functions are  used in the hidden layers of the encoder to capture non-linear patterns. In the decoder, a sigmoid activation is  applied for normalized data, while a linear activation is used for continuous outputs. The Adam optimizer is widely used due to its efficient convergence and ability to adapt learning rates, making it ideal for training models in anomaly detection tasks. This combination helps in accurately reconstructing normal data while highlighting anomalies like fake base stations.
 
 \subsection{Questions from Aaron McKay}
 1. In your experience testing the anomaly detection model, what factors do you think contributed to detecting exactly 717 anomalies, and how would you validate if these were true positives?
+In my experience testing the anomaly detection model, several factors contributed to detecting exactly 717 anomalies. First, the choice of the threshold for reconstruction error is crucial, as it defines the boundary between normal and anomalous behaviour. A well-tuned threshold ensures that only significant deviations are flagged as anomalies. Second, the quality and diversity of the training data play a major role. If the model was trained primarily on normal data, it would be sensitive to deviations, such as those caused by fake base stations. Additionally, data preprocessing, including normalization and noise reduction, ensures the model learns meaningful patterns without being affected by outliers.
+To validate if these 717 anomalies are true positives, I would:
+1. Cross-validate the model using a labelled dataset where the anomalies (fake base stations) are known. This would help confirm whether the detected anomalies match the ground truth.
+2. Conduct a manual investigation of the flagged instances to check if they exhibit characteristics of fake base stations, such as abnormal time delays or unusual transaction behaviour.
+3. Use domain-specific tests, such as checking for specific features in fake base stations (e.g., signal characteristics), to ensure that the anomalies correspond to actual threats and not benign deviations.
 
 2. As a PhD candidate in Security working with Dr. Chang, how do you see your research in adversarial attacks potentially intersecting with fake base station detection?
+As a PhD candidate in Security working with Dr. Chang, I see my research in adversarial attacks intersecting with fake base station detection in several ways. Adversarial attacks involve manipulating input data to deceive machine learning models, and in the context of fake base stations, attackers could exploit vulnerabilities in anomaly detection models by subtly altering the behaviour of malicious base stations to make them appear legitimate. This presents a challenge in distinguishing between true anomalies and adversarially manipulated data. My research could focus on enhancing the robustness of detection models against such attacks by incorporating adversarial training or defensive techniques like robust optimization. This would strengthen the model's ability to not only detect traditional fake base stations but also identify more sophisticated threats that attempt to bypass detection through adversarial methods.
