@@ -123,7 +123,21 @@ real-world scenarios of collaboration challenges and their solutions.
     \item How do you plan to improve your Monte Carlo simulation model to handle more complex cyber attacks or different types of attackers in the future?
     
     \subsection*{Answer}
-
+The current Monte Carlo simulation model provides a basic framework for risk quantification, 
+    but there are several planned improvements to handle complex attack scenarios:
+    
+    \begin{itemize}
+        \item Incorporate attacker profiles with different skill levels, resources, and motivations
+        \item Add multi-stage attack modeling to capture attack chains and dependencies
+        \item Include temporal factors to model how risks evolve over time
+        \item Integrate the FAIR model's components more explicitly, especially the 'Threat Event Frequency' 
+              and 'Vulnerability' factors shown in the diagram
+        \item Add correlation between different types of attacks to model complex scenarios
+        \item Implement Bayesian updating to refine probabilities based on observed incidents
+    \end{itemize}
+    
+    The goal is to move beyond simple probability-based scenarios to a more nuanced model that 
+    reflects the dynamic nature of cyber threats while maintaining computational efficiency.
 \end{enumerate}
 
 
