@@ -46,7 +46,12 @@ board.processor.cores0.core.branchPred.indirectLookups  1790 \# Number of indire
 board.processor.cores0.core.branchPred.indirectHits     1748 \# Number of indirect target hits. (Count)\\
 board.processor.cores0.core.branchPred.indirectMisses    42 \# Number of indirect misses. (Count)\\
 board.processor.cores0.core.branchPred.indirectMispredicted  24 \# Number of mispredicted indirect branches. (Count)\\
-
+\section{Learning and findings: }
+\begin{enumerate}
+    \item I had to fork and then clone the repo sinnce I don't have any permissions.
+    \item I found it challenging to manage files that are uploaded without testing which impacted my productivity. 
+    \item I found a conflict in .bcf file and removed it since we won't be staging those changes, but somehow there was a commit in which it was a problem. simple removed the file from incoming change and resumed the rebase.
+\end{enumerate}
 \section*{Questions For me: }
 Your work looks interesting from a computer architecture perspective. However, you have mentioned that it is based on risc-v architecture, in the current context, how is the scenario of this architecture being used in real world applications? What do you see the future prospects of it?
 
@@ -61,7 +66,7 @@ $\longrightarrow$ I focus mostly on where I go wrong in my research. I am always
 \subsection{Questions from Aaron McKay}
 1. Given your interest in optimizing branch prediction and mitigating SPECTRE attacks, what insights did you gain from the gem5 simulation results showing 462 incorrect conditional branch predictions out of 21,139 predictions? How might this inform your thesis work?
 
-$\longrightarrow$ The 462 incorrect conditional branch predictions indicate that the pipeline design is not optimally utilizing branch prediction. The workload was a sieve of eratosthenes implementation is a compute intennsive workload, which has a predictable braching pattern. I was only running this as a sample orkload on the simuator. I think it would be best to implemennt SPCINT95 and see what that would give to answer this question more accurately.
+$\longrightarrow$ I understand 462 incorrect conditional branch predictions are negligible. The workload was a sieve of eratosthenes implementation is a compute intennsive workload, which has a predictable braching pattern. I was only running this as a sample orkload on the simuator. I think it would be best to implemennt SPCINT95 and see what that would give to answer this question more accurately.
 
 2. Your personal interests include contemplating meta-ethics and exploring possibilities. How has this philosophical approach influenced your thinking about processor security, particularly regarding the ethical implications of speculative execution vulnerabilities?
 
@@ -73,3 +78,4 @@ Thanks for the question this has beeen interesting to think about.
 
 $\longrightarrow$ Imgine a super scalar pipe line wiht all the functional units. The current problem is the overhead that a processor gets whenn there is branch misprediction. Processors also has speculative execution whcih makes them vulnnerabe to spectre attacks. 
 I got to thinking, what if the branch address that is required is already prefetched and decoded ready for the execution. Speculative executiion onnly happens when the instruction is in EX functional unit. So, if we can some how has the branch outcome address that is readdy to be executed with out squashing the entire pipeline, that would be a significant performance gain and the squashing is only performed on the ssecondary fetch and decode units.
+
