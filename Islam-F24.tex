@@ -1,10 +1,4 @@
-\section{Goals for the Course}
-
-As a PhD candidate in Security under the guidance of Dr Sang-Yoon Chang, my primary goal in the "Computer Science Research - CS 6000" course is to deepen my understanding of advanced research methodologies and refine my ability to conduct impactful research in security. This course represents a pivotal opportunity to explore the latest trends, challenges, and innovations in cybersecurity, allowing me to develop a comprehensive framework for addressing complex issues in this domain. Through rigorous analysis and the application of various research techniques, I aim to contribute novel insights to the academic community while also developing practical solutions that can be applied in real-world scenarios.\\
-
-In particular, I am eager to enhance my skills in identifying, analyzing, and solving complex security problems, focusing on areas such as adversarial attacks, secure system design, and the development of robust defence mechanisms. By the end of this course, I hope to have a well-rounded understanding of how to conduct high-quality research that not only advances theoretical knowledge but also has tangible impacts on the security landscape. My ultimate goal is to leverage this knowledge to produce a dissertation that is both academically rigorous and practically significant, contributing to the field of cybersecurity in meaningful ways.\\
-
-Personally, I am married and the father of two energetic boys, both seven years old. Balancing family life with academic pursuits is both challenging and rewarding, and I find that travelling with my family during free time and vacations provides the perfect opportunity to relax and gain new perspectives. My journey from Bangladesh to my current PhD program represents not just a professional ambition but also a personal commitment to growth and learning.
+\section{Goals for the Course-Amanul Islam}
 
 \begin{figure}[h!]
 \centering
@@ -13,8 +7,14 @@ Personally, I am married and the father of two energetic boys, both seven years 
 \label{fig:myphoto}
 \end{figure}
 
+As a PhD candidate in Security under the guidance of Dr Sang-Yoon Chang, my primary goal in the "Computer Science Research - CS 6000" course is to deepen my understanding of advanced research methodologies and refine my ability to conduct impactful research in security. This course represents a pivotal opportunity to explore the latest trends, challenges, and innovations in cybersecurity, allowing me to develop a comprehensive framework for addressing complex issues in this domain. Through rigorous analysis and the application of various research techniques, I aim to contribute novel insights to the academic community while also developing practical solutions that can be applied in real-world scenarios.\\
 
-\section*{Output of the Training and Validation Loss of Anomaly-Detection-in-Fake-Base-Station-using-Autoencoder: }
+In particular, I am eager to enhance my skills in identifying, analyzing, and solving complex security problems, focusing on areas such as adversarial attacks, secure system design, and the development of robust defence mechanisms. By the end of this course, I hope to have a well-rounded understanding of how to conduct high-quality research that not only advances theoretical knowledge but also has tangible impacts on the security landscape. My ultimate goal is to leverage this knowledge to produce a dissertation that is both academically rigorous and practically significant, contributing to the field of cybersecurity in meaningful ways.\\
+
+Personally, I am married and the father of two energetic boys, both seven years old. Balancing family life with academic pursuits is both challenging and rewarding, and I find that travelling with my family during free time and vacations provides the perfect opportunity to relax and gain new perspectives. My journey from Bangladesh to my current PhD program represents not just a professional ambition but also a personal commitment to growth and learning.
+
+
+\section*{Output of the Training and Validation Loss of Anomaly-Detection }
 
 I tested the (https://github.com/Luckyaman/Anomaly-Detection-in-Fake-Base-Station-using-Autoencoder.git) related to anomaly detection in 5G networks.
 
@@ -125,20 +125,23 @@ Epoch 50/50
 Number of anomalies detected: 717
 
 \section*{Questions: }
-What activation functions and optimiser did you use?(From Sahil)
+\subsection{Question from Sahil Thapa}
+1.What activation functions and optimiser did you use?
 
-The ReLU  functions are used in the hidden layers of the encoder to capture non-linear patterns for anomaly detection in fake base stations using autoencoders. In the decoder, a sigmoid activation is  applied for normalized data. The Adam optimizer is  used due to its efficient convergence and ability to adapt learning rates. This helps  accurately reconstruct normal data while highlighting anomalies like fake base stations.
+Answer:The ReLU  functions are used in the hidden layers of the encoder to capture non-linear patterns for anomaly detection in fake base stations using autoencoders. In the decoder, a sigmoid activation is  applied for normalized data. The Adam optimizer is  used due to its efficient convergence and ability to adapt learning rates. This helps  accurately reconstruct normal data while highlighting anomalies like fake base stations.
 
-Have you considered looking at any encryption algorithms like quantum algorithms? DC(From Abdul)
+\subsection{Question from Abdul}
 
-I haven't specifically considered quantum encryption algorithms in my current research on fake base station detection and anomaly detection, as the focus has been more on machine learning methods for detecting malicious behaviour. However, quantum encryption algorithms, such as quantum key distribution (QKD), could play a crucial role in securing communication channels against fake base stations in the future. 
+1.Have you considered looking at any encryption algorithms like quantum algorithms? DC(From Abdul)
+
+Answer:I haven't specifically considered quantum encryption algorithms in my current research on fake base station detection and anomaly detection, as the focus has been more on machine learning methods for detecting malicious behaviour. However, quantum encryption algorithms, such as quantum key distribution (QKD), could play a crucial role in securing communication channels against fake base stations in the future. 
 
 \subsection{Questions from Aaron McKay}
 1. In your experience testing the anomaly detection model, what factors do you think contributed to detecting exactly 717 anomalies, and how would you validate if these were true positives?
 
-In my experience testing the anomaly detection model, I can identify a few reasons for catching exactly 717 anomalies. First, the choice of the threshold for reconstruction error is important, as it defines the boundary between normal and anomalous behaviour. A well-tuned threshold ensures that only significant deviations are flagged as anomalies. Second, the quality and diversity of the training data play a major role. If the model was trained primarily on normal data, it would be sensitive to deviations, such as those caused by fake base stations. Additionally, data preprocessing, including normalization and noise reduction, ensures the model learns meaningful patterns without being affected by outliers.
+Answer:In my experience testing the anomaly detection model, I can identify a few reasons for catching exactly 717 anomalies. First, the choice of the threshold for reconstruction error is important, as it defines the boundary between normal and anomalous behaviour. A well-tuned threshold ensures that only significant deviations are flagged as anomalies. Second, the quality and diversity of the training data play a major role. If the model was trained primarily on normal data, it would be sensitive to deviations, such as those caused by fake base stations. Additionally, data preprocessing, including normalization and noise reduction, ensures the model learns meaningful patterns without being affected by outliers.
 To validate if these 717 anomalies are true positives, I would cross-validate the model using a labelled dataset where the anomalies (fake base stations) are known. This would help confirm whether the detected anomalies match the ground truth. I would conduct a manual investigation of the flagged instances to check if they exhibit characteristics of fake base stations, such as abnormal time delays or unusual transaction behaviour.
 
 2. As a PhD candidate in Security working with Dr. Chang, how do you see your research in adversarial attacks potentially intersecting with fake base station detection?
 
-As a PhD candidate in Security working with Dr. Chang, I see my research in adversarial attacks intersecting with fake base station detection in several ways. Adversarial attacks involve manipulating input data to deceive machine learning models, and in the context of fake base stations, attackers could exploit vulnerabilities in anomaly detection models by subtly altering the behaviour of malicious base stations to make them appear legitimate. This presents a challenge in distinguishing between true anomalies and adversarially manipulated data. My research could focus on enhancing the robustness of detection models against such attacks by incorporating adversarial training or defensive techniques like robust optimization. This would strengthen the model's ability to not only detect traditional fake base stations but also identify more sophisticated threats that attempt to bypass detection through adversarial methods.
+Answer:As a PhD candidate in Security working with Dr. Chang, I see my research in adversarial attacks intersecting with fake base station detection in several ways. Adversarial attacks involve manipulating input data to deceive machine learning models, and in the context of fake base stations, attackers could exploit vulnerabilities in anomaly detection models by subtly altering the behaviour of malicious base stations to make them appear legitimate. This presents a challenge in distinguishing between true anomalies and adversarially manipulated data. My research could focus on enhancing the robustness of detection models against such attacks by incorporating adversarial training or defensive techniques like robust optimization. This would strengthen the model's ability to not only detect traditional fake base stations but also identify more sophisticated threats that attempt to bypass detection through adversarial methods.
