@@ -41,5 +41,25 @@ $\{'precision': 0.9037206096479873, 'recall': 0.9141333333333334, 'f1': 0.908744
 
 \subsection{Questions from Aaron McKay}
 1. Looking at your CNNSplice test results, the precision and recall metrics are consistently high (above 90%). In your research with Dr. Oluwadare, how do you balance the trade-off between false positives and false negatives when detecting splice sites, considering the potential biological implications?
+Balancing the trade-off between false positives and false negatives in splice site detection is crucial, especially given the biological implications of misclassifications. Here are some strategies we considered in our research with Dr. Oluwadare:\\
+\begin{enumerate}
+\item \textbf{Threshold Adjustment:} By adjusting the decision threshold of our model, we can control the sensitivity (recall) and specificity (precision). A higher threshold might reduce false positives but increase false negatives, and vice versa. We often analyze the precision-recall curve to find an optimal balance for our specific application.
+    \item \textbf{Biological Context:} Incorporating biological knowledge can help refine predictions. For example, prioritizing splice sites that are more likely to be functionally relevant based on known splice variant patterns can help mitigate the impact of false positives.
+    \item \textbf{Cross-Validation:} Using k-fold cross-validation ensures that our model generalizes well across different datasets, helping us identify potential biases that could lead to either type of error.
+    \item \textbf{Ensemble Methods:} Combining multiple models can enhance performance by capturing different aspects of the data, which can reduce both false positives and false negatives.
+    \item \textbf{Post-Processing:} Implementing rules or filters based on biological annotations can help eliminate unlikely splice site predictions after the initial model output.
+    \item \textbf{User Feedback:} Collaborating with biologists to review and validate predicted splice sites can provide insights into which errors are more acceptable in practical applications.
+\end{enumerate}
+By carefully considering these factors, we can optimize our approach to detect splice sites with a balance that aligns with the biological significance of our findings.
 
 2. Given your work on CNNSplice and your focus on deep learning in bioinformatics, what motivated your choice of convolutional neural networks over other deep learning architectures (like transformers or RNNs) for splice site detection?
+Our choice of convolutional neural networks for splice site detection was motivated by several factors:
+\begin{enumerate}
+    \item \textbf{Spatial Hierarchies:} CNNs excel at capturing local patterns and hierarchical features, which is particularly useful for sequence data like DNA. The convolutional layers can effectively identify motifs and features relevant to splice sites, such as specific nucleotide combinations.
+    \item \textbf{Reduced Complexity:} Compared to recurrent neural networks (RNNs) and transformers, CNNs typically require fewer computational resources for training and inference. This efficiency is important when working with large genomic datasets.
+    \item \textbf{Translation Invariance:} The nature of splice site sequences means that relevant features can occur at different positions within the input. CNNs’ ability to learn translation-invariant features makes them well-suited for this task.
+    \item \textbf{Robustness to Noise:} CNNs are generally more robust to noise and variations in input data, which is essential in bioinformatics, where sequencing errors and biological variability can introduce inconsistencies.
+    \item \textbf{Empirical Success:} Prior studies and benchmarks showed that CNNs performed well in similar tasks, such as motif discovery and sequence classification, which encouraged us to adopt this architecture for splice site detection.
+\end{enumerate}
+
+While we remain open to exploring other architectures like transformers or RNNs in future work, CNNs provided a strong foundation for our initial investigations into splice site prediction.
